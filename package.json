@@ -1,0 +1,22 @@
+{
+  "name": "node-stu-app",
+  "version": "1.0.0",
+  "description": "study node by ts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YangChaoJie/node-stu-app.git"
+  },
+  "author": "jerry yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YangChaoJie/node-stu-app/issues"
+  },
+  "homepage": "https://github.com/YangChaoJie/node-stu-app#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
