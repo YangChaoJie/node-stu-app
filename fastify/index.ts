@@ -1,10 +1,15 @@
 import fastify from "fastify";
+import fisrtRoutes from './route/first';
 const server = fastify({
   logger: true
 });
+
+server.register(fisrtRoutes);
+
 server.get('/', async (request, reply) => {
   return { hello: 'world' }
 })
+
 
 // Run the server!
 const start = async () => {

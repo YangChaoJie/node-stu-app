@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = require("fastify");
-const server = (0, fastify_1.default)();
+const first_1 = require("./route/first");
+const server = (0, fastify_1.default)({
+    logger: true
+});
+server.register(first_1.default);
 server.get('/', async (request, reply) => {
     return { hello: 'world' };
 });

@@ -7,7 +7,7 @@ import { FastifyInstance } from "fastify";
  */
 async function fisrtRoutes(fastify: FastifyInstance, options: Object) {
   fastify.get('/home', async (request, reply) => {
-    return { hello: 'world' }
+    return { hello: 'world1' }
   })
 }
 
