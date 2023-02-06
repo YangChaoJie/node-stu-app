@@ -8,7 +8,6 @@ server.register(dbConnector);
 server.register(fisrtRoutes);
 
 server.get('/', async (request, reply) => {
-  
   return { hello: 'world' }
 })
 

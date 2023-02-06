@@ -3,6 +3,7 @@
     "target": "es2017",
     "module": "CommonJS",
     // "lib": ["esnext"],
+    "outDir": "dist",
     "moduleResolution": "NodeNext",
     // "esModuleInterop": true,
     "strict": true,
@@ -11,6 +12,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
   },
-  // "include": ["index.ts"],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "type": "module"
 }
