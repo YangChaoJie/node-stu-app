@@ -23,3 +23,7 @@ const start = async () => {
   }
 }
 start()
+
+// 参考
+// https://github.com/HospitalRun/hospitalrun-server
+// https://snyk.io/advisor/npm-package/fastify/example
