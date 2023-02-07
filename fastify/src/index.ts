@@ -26,3 +26,4 @@ start()
 // 参考
 // https://github.com/HospitalRun/hospitalrun-server
 // https://snyk.io/advisor/npm-package/fastify/example
+// https://github.com/ChainSafe/lodestar/blob/unstable/packages/api/src/utils/client/client.ts
