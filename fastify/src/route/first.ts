@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { request } from "http";
-
+import { FromSchema } from 'json-schema-to-ts';
+import { InsertOneResult } from 'mongodb';
 interface userParam  {
   user: string
 }
@@ -11,6 +11,20 @@ interface Querystring {
 interface Headers {
   'h-custom': string
 }
+
+const userBodyJsonSchema = {
+  type: 'object',
+  properties: {
+    username: { type: 'string' },
+    age: { type: 'number' },
+    email: { type: 'string' },
+    localtion: { type: 'string' },
+    gender: { type: 'string' }
+  },
+  required: ['username']
+ } as const;
+
+
 /**
  * Encapsulates the routes
  * @param {FastifyInstance} fastify  Encapsulated Fastify Instance
@@ -51,6 +65,41 @@ async function fisrtRoutes(fastify: FastifyInstance, options: Object) {
     const customerHeader = request.headers['h-Custom']
     return `${ username } ${ age } logged in`;
   })
+  
+  fastify.post<{ Body: FromSchema<typeof userBodyJsonSchema> }> (
+    '/addUserName',
+    {
+      schema: {
+        body: userBodyJsonSchema,
+        response: {
+          201: {
+            type: 'string'
+          }
+        }
+      }
+    },
+   async (request, reply): Promise<InsertOneResult<Document> | undefined> => {
+     return await collection?.insertOne({ username: request.body.username});
+   }
+  );
+
+  fastify.post<{ Body: FromSchema<typeof userBodyJsonSchema> }> (
+    '/addUser',
+    {
+      schema: {
+        body: userBodyJsonSchema,
+        response: {
+          201: {
+            type: 'string'
+          }
+        }
+      }
+    },
+   async (request, reply): Promise<void> => {
+      await collection?.insertOne({ ...request.body });
+      reply.status(200).send({ data: '插入成功!!!' });
+   }
+  );
 }
 
 export default fisrtRoutes

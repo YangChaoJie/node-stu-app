@@ -27,3 +27,6 @@ start()
 // https://github.com/HospitalRun/hospitalrun-server
 // https://snyk.io/advisor/npm-package/fastify/example
 // https://github.com/ChainSafe/lodestar/blob/unstable/packages/api/src/utils/client/client.ts
+// docker 部署
+// https://juejin.cn/post/684490403505348608
+// https://juejin.cn/post/7151415587384590366
