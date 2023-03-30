@@ -1,6 +1,6 @@
+import { InsertOneResult } from 'mongodb';
 import { FastifyInstance } from "fastify";
 import { FromSchema } from 'json-schema-to-ts';
-import { InsertOneResult } from 'mongodb';
 interface userParam  {
   user: string
 }
@@ -78,7 +78,7 @@ async function fisrtRoutes(fastify: FastifyInstance, options: Object) {
         }
       }
     },
-   async (request, reply): Promise<InsertOneResult<Document> | undefined> => {
+   async (request, reply): Promise<InsertOneResult | undefined> => {
      return await collection?.insertOne({ username: request.body.username});
    }
   );

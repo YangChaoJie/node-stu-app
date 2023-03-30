@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fastify:dev": "pnpm run -C packages/docs dev"
+    "dev": "pnpm run -C packages/fastify dev"
   },
   "repository": {
     "type": "git",
